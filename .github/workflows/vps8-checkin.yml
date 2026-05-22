@@ -2,7 +2,7 @@ name: VPS8 Checkin
 
 on:
   schedule:
-    - cron: '2 0 * * *'
+    - cron: '7 0 * * *'
   workflow_dispatch:
     inputs:
       debug:
@@ -141,7 +141,7 @@ jobs:
           echo "最终写入明天的 Cron 时间为：$new_cron"
           
           # 替换新cron
-          sed -i -E "s/- cron: '.*'/- cron: '${new_cron#*}'/" "$yaml_file"
+          sed -i -E "s/- cron: '7 0 * * *'/" "$yaml_file"
           
           # 提交推送
           git config user.name "github-actions[bot]"
