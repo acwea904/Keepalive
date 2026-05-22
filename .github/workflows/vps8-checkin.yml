@@ -141,9 +141,7 @@ jobs:
           echo "最终写入明天的 Cron 时间为：$new_cron"
           
           # 替换新cron
-          TARGET="- cron:"
-          REPLACEMENT="- cron: '2 0 * * *'"
-          sed -i -E "s/$TARGET '.+'/$REPLACEMENT/" "$yaml_file"
+          eval "sed -i -E 's/- cron: \'.*\'/- cron: '"\${new_cron}"'/g' \$yaml_file"
           
           # 提交推送
           git config user.name "github-actions[bot]"
