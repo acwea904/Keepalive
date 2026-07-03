@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 class StreamlitAppWaker:
     """针对 Streamlit 应用的自动唤醒工具"""
     
-    APP_URL = os.environ.get("STREAMLIT_APP_URL", "")
+    APP_URL = os.environ.get("STREAMLIT_APP_URL", "https://app-ll2audfyefghgkqkmvcamr.streamlit.app")
     INITIAL_WAIT_TIME = 15  # 初始等待，确保页面结构稳定
     CLICK_WAIT_TIME = 10  # 点击后的硬等待，确保异步请求完成
     
